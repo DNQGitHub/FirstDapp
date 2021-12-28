@@ -1,0 +1,9 @@
+# Windows files
+[*.bat]
+end_of_line = crlf
+
+[*.js]
+tab_width = 2
+
+[*.json]
+tab_width = 2
