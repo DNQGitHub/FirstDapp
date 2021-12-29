@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import WalletConnectClient from '@walletconnect/client';
 
 export default function App() {
 	const handleOnPressedBtnConnect = () => {
@@ -26,8 +27,8 @@ export default function App() {
 			borderRadius: 25,
 		},
 		buttonText: {
-			color: '#000000',
-			fontWeight: 'bold',
+			color: '#fff',
+			fontSize: 20,
 		},
 	});
 

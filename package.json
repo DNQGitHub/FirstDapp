@@ -10,8 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@walletconnect/client": "^2.0.0-beta.21",
+    "events": "^1.0.0",
+    "node-libs-browser": "^2.2.1",
+    "path-browserify": "^1.0.1",
     "react": "17.0.2",
-    "react-native": "0.66.4"
+    "react-native": "0.66.4",
+    "react-native-crypto": "^2.2.0",
+    "react-native-randombytes": "^3.6.1",
+    "react-native-stream": "^0.1.9",
+    "web3": "^1.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -21,9 +29,22 @@
     "eslint": "7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "rn-nodeify": "github:tradle/rn-nodeify"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "react-native": {
+    "stream": "react-native-stream",
+    "crypto": "react-native-crypto",
+    "path": "path-browserify",
+    "process": "node-libs-browser/mock/process"
+  },
+  "browser": {
+    "stream": "react-native-stream",
+    "crypto": "react-native-crypto",
+    "path": "path-browserify",
+    "process": "node-libs-browser/mock/process"
   }
 }
