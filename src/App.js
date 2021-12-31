@@ -3,6 +3,7 @@ import {WallectConnectConfig} from './configs';
 import {
 	Linking,
 	Platform,
+	SafeAreaView,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
@@ -157,37 +158,39 @@ export default function App() {
 	});
 
 	return (
-		<View style={styles.body}>
-			<Text style={styles.title}>This is my first dapp</Text>
+		<SafeAreaView>
+			<View style={styles.body}>
+				<Text style={styles.title}>This is my first dapp</Text>
 
-			{!appSession ? (
-				<TouchableOpacity
-					style={{...styles.button, ...styles.buttonConnect}}
-					onPress={handleOnBtnConnectPressed}>
-					<View>
-						<Text style={styles.buttonText}>Connect</Text>
-					</View>
-				</TouchableOpacity>
-			) : (
-				<View>
-					<Text style={styles.title}>Welcome, </Text>
+				{!appSession ? (
 					<TouchableOpacity
-						style={{...styles.button, ...styles.buttonLogout}}
-						onPress={handleOnBtnLogoutPressed}>
+						style={{...styles.button, ...styles.buttonConnect}}
+						onPress={handleOnBtnConnectPressed}>
 						<View>
-							<Text style={styles.buttonText}>Logout</Text>
+							<Text style={styles.buttonText}>Connect</Text>
 						</View>
 					</TouchableOpacity>
-				</View>
-			)}
+				) : (
+					<View>
+						<Text style={styles.title}>Welcome, </Text>
+						<TouchableOpacity
+							style={{...styles.button, ...styles.buttonLogout}}
+							onPress={handleOnBtnLogoutPressed}>
+							<View>
+								<Text style={styles.buttonText}>Logout</Text>
+							</View>
+						</TouchableOpacity>
+					</View>
+				)}
 
-			<WalletListModal
-				onRequestClose={() => {
-					setModalWalletListVisible(false);
-				}}
-				visible={modalWalletListVisible}
-				onItemPressed={handleOnWalletItemPressed}
-			/>
-		</View>
+				<WalletListModal
+					onRequestClose={() => {
+						setModalWalletListVisible(false);
+					}}
+					visible={modalWalletListVisible}
+					onItemPressed={handleOnWalletItemPressed}
+				/>
+			</View>
+		</SafeAreaView>
 	);
 }
