@@ -16,7 +16,7 @@ export default function App() {
 	const [walletConnectClient, setWalletConnectClient] = useState(null);
 	const [appSession, setAppSession] = useState(null);
 	const [wcUri, setWcUri] = useState(null);
-	const [modalWalletListVisible, setModalWalletListVisible] = useState(true);
+	const [modalWalletListVisible, setModalWalletListVisible] = useState(false);
 
 	useEffect(() => {
 		initApp();
