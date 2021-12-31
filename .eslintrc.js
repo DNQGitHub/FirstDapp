@@ -5,5 +5,6 @@ module.exports = {
 		'react-hooks/exhaustive-deps': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'no-shadow': 'off',
+		'prettier/prettier': 'off',
 	},
 };
