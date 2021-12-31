@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {WallectConnectConfig} from './configs';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
 	Linking,
