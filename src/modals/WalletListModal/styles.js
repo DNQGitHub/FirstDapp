@@ -10,6 +10,7 @@ export default StyleSheet.create({
 	},
 	modalBox: {
 		width: Dimensions.get('screen').width - 50,
+		maxHeight: Dimensions.get('screen').height / 2,
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: 20,

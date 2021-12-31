@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	itemContainer: {
 		flexGrow: 0,
 		padding: 10,
-		backgroundColor: '#ffffff80',
+		backgroundColor: '#ffffff00',
 	},
 	itemBody: {
 		height: 60,
@@ -23,7 +23,7 @@ export default StyleSheet.create({
 		marginTop: 0,
 	},
 	itemBodyLast: {
-		marginBottom: 0,
+		marginBottom: 20,
 	},
 	itemName: {
 		fontSize: 20,

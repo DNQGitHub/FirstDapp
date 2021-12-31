@@ -20,7 +20,11 @@ export default function WalletList({onItemPressed, style}) {
 
 		for (let key of Object.keys(data)) {
 			const wallet = data[key];
-			if (AppConfig.supportedWallets.includes(wallet.name)) {
+			if (
+				(AppConfig.supportedWallets === '*' ||
+					AppConfig.supportedWallets.includes(wallet.name)) &&
+				(wallet.mobile.native || wallet.mobile.univeral)
+			) {
 				wallet.iconUrls = {
 					sm: `https://registry.walletconnect.org/logo/sm/${key}.jpeg`,
 					md: `https://registry.walletconnect.org/logo/md/${key}.jpeg`,
