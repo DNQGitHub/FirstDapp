@@ -6,6 +6,7 @@ import {
 	SafeAreaView,
 	StyleSheet,
 	Text,
+	TextInput,
 	TouchableOpacity,
 	View,
 } from 'react-native';
@@ -121,9 +122,19 @@ export default function App() {
 	return (
 		<SafeAreaView>
 			<View style={styles.body}>
-				<Logo width="80%" height="120" />
+				<Logo width="80%" height="80" />
 
-				<Text style={styles.title}>This is my first dapp</Text>
+				<Text style={styles.title}>v2.0.0-beta.21</Text>
+
+				{wcUri && (
+					<TextInput
+						style={styles.title}
+						value={wcUri}
+						multiline={true}
+						// editable={false}
+						selectTextOnFocus={false}
+					/>
+				)}
 
 				{!appSession ? (
 					<TouchableOpacity
@@ -169,6 +180,9 @@ const styles = StyleSheet.create({
 	title: {
 		marginBottom: 20,
 		fontSize: 20,
+		textAlign: 'center',
+		paddingLeft: 15,
+		paddingRight: 15,
 	},
 	button: {
 		width: 150,
