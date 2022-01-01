@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "node ./tools/scripts/post-install.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.14",
@@ -19,9 +20,12 @@
     "react": "17.0.2",
     "react-native": "0.66.4",
     "react-native-crypto": "^2.2.0",
+    "react-native-dialogs": "^1.1.1",
     "react-native-get-random-values": "^1.7.2",
     "react-native-randombytes": "^3.6.1",
     "react-native-stream": "^0.1.9",
+    "react-native-svg": "^12.1.1",
+    "react-native-svg-transformer": "^1.0.0",
     "web3": "^1.6.1"
   },
   "devDependencies": {

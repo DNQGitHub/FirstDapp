@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import WalletConnectClient, {CLIENT_EVENTS} from '@walletconnect/client';
 import WalletListModal from './modals/WalletListModal';
+import Logo from './assets/walletconnect-banner.svg';
+import DialogAndroid from 'react-native-dialogs/DialogAndroid';
 
 export default function App() {
 	const [walletConnectClient, setWalletConnectClient] = useState(null);
@@ -45,7 +47,17 @@ export default function App() {
 		if (Platform.OS === 'ios') {
 			setModalWalletListVisible(true);
 		} else {
-			await Linking.openURL(uri);
+			if (await Linking.canOpenURL(uri)) {
+				await Linking.openURL(uri);
+			} else {
+				DialogAndroid.alert(
+					'No wallet found',
+					'Find a wallet at <a href="https://ethereum.org/en/wallets/find-wallet">https://ethereum.org/en/wallets/find-wallet</a>',
+					{
+						contentIsHtml: true,
+					},
+				);
+			}
 		}
 	};
 
@@ -98,7 +110,9 @@ export default function App() {
 		}
 
 		const {native, universal} = item.mobile;
-		const deepLink = `${universal || (native && `${native}/`)}/wc?uri=${encodeURIComponent(wcUri)}`;
+		const deepLink = `${
+			universal || (native && `${native}/`)
+		}/wc?uri=${encodeURIComponent(wcUri)}`;
 
 		console.log(deepLink);
 		Linking.openURL(deepLink);
@@ -107,6 +121,8 @@ export default function App() {
 	return (
 		<SafeAreaView>
 			<View style={styles.body}>
+				<Logo width="80%" height="120" />
+
 				<Text style={styles.title}>This is my first dapp</Text>
 
 				{!appSession ? (
