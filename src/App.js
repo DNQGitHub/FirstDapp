@@ -131,7 +131,7 @@ export default function App() {
 						style={styles.title}
 						value={wcUri}
 						multiline={true}
-						selectTextOnFocus={false}
+						selectTextOnFocus={true}
 					/>
 				)}
 
