@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, View, Text} from 'react-native';
+import {Modal, View, Text, Pressable} from 'react-native';
 import WalletList from '../../components/WalletList';
 import styles from './styles';
 
@@ -18,6 +18,9 @@ export default function WalletListModal({
 						onItemPressed={onItemPressed}
 					/>
 				</View>
+				<Pressable style={styles.buttonClose} onPress={onRequestClose}>
+					<Text style={styles.buttonCloseText}>Close</Text>
+				</Pressable>
 			</View>
 		</Modal>
 	);

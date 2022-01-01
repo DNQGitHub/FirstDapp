@@ -27,4 +27,11 @@ export default StyleSheet.create({
 		fontWeight: 'bold',
 		marginBottom: 10,
 	},
+	buttonClose: {
+		marginTop: 20,
+	},
+	buttonCloseText: {
+		fontSize: 22,
+		color: '#f00',
+	}
 });

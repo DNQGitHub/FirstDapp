@@ -98,64 +98,11 @@ export default function App() {
 		}
 
 		const {native, universal} = item.mobile;
-		const deepLink = `${universal || (native && `${native}/`)}/wc?uri=${wcUri}`;
+		const deepLink = `${universal || (native && `${native}/`)}/wc?uri=${encodeURIComponent(wcUri)}`;
 
 		console.log(deepLink);
 		Linking.openURL(deepLink);
 	};
-
-	const styles = StyleSheet.create({
-		body: {
-			width: '100%',
-			height: '100%',
-			alignItems: 'center',
-			justifyContent: 'center',
-		},
-		title: {
-			marginBottom: 20,
-			fontSize: 20,
-		},
-		button: {
-			width: 150,
-			height: 50,
-			alignItems: 'center',
-			justifyContent: 'center',
-			backgroundColor: '#f4f4f4',
-			borderRadius: 5,
-			elevation: 15,
-		},
-		buttonText: {
-			color: '#fff',
-			fontSize: 20,
-		},
-		buttonConnect: {
-			backgroundColor: '#3D85C6',
-			shadowColor: '#3D85C6',
-		},
-		buttonLogout: {
-			backgroundColor: '#e69138',
-			shadowColor: '#e69138',
-		},
-		modalWallets: {
-			width: '100%',
-			height: '100%',
-			backgroundColor: 'red',
-			alignItems: 'center',
-			justifyContent: 'center',
-		},
-		modalWalletsDialog: {
-			width: '80%',
-			height: '50%',
-			backgroundColor: 'blue',
-			alignItems: 'center',
-			justifyContent: 'center',
-		},
-		wallet: {
-			width: 300,
-			height: 50,
-			backgroundColor: '#fff',
-		},
-	});
 
 	return (
 		<SafeAreaView>
@@ -194,3 +141,57 @@ export default function App() {
 		</SafeAreaView>
 	);
 }
+
+const styles = StyleSheet.create({
+	body: {
+		width: '100%',
+		height: '100%',
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: '#fff',
+	},
+	title: {
+		marginBottom: 20,
+		fontSize: 20,
+	},
+	button: {
+		width: 150,
+		height: 50,
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: '#f4f4f4',
+		borderRadius: 5,
+		elevation: 15,
+	},
+	buttonText: {
+		color: '#fff',
+		fontSize: 20,
+	},
+	buttonConnect: {
+		backgroundColor: '#3D85C6',
+		shadowColor: '#3D85C6',
+	},
+	buttonLogout: {
+		backgroundColor: '#e69138',
+		shadowColor: '#e69138',
+	},
+	modalWallets: {
+		width: '100%',
+		height: '100%',
+		backgroundColor: 'red',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	modalWalletsDialog: {
+		width: '80%',
+		height: '50%',
+		backgroundColor: 'blue',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	wallet: {
+		width: 300,
+		height: 50,
+		backgroundColor: '#fff',
+	},
+});
