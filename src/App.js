@@ -131,7 +131,6 @@ export default function App() {
 						style={styles.title}
 						value={wcUri}
 						multiline={true}
-						// editable={false}
 						selectTextOnFocus={false}
 					/>
 				)}
