@@ -7,7 +7,7 @@ const mustRemovedDirs = [
 mustRemovedDirs.forEach(dir => {
 	console.log('post-install', 'process-must-removed-dir', dir);
 	if (fs.existsSync(dir)) {
-		fs.rmdirSync(dir);
+		fs.rmdirSync(dir, {recursive: true, force: true});
 		console.log('removed ', dir);
 	}
 });
